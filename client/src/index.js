@@ -51,3 +51,10 @@ if (getCookie("seen") === null) {
     showModal();
 }
 
+
+document.getElementById('commit-mood-modal-close').addEventListener('click', function(e) {
+    document.getElementById('commit-mood-modal-wrapper').classList.add('hidden');
+});
+document.getElementById('commit-mood').addEventListener('click', function(e) {
+    document.getElementById('commit-mood-modal-wrapper').classList.remove('hidden');
+});

@@ -63,3 +63,83 @@
     from { opacity: 0; transform: scale(0.95);}
     to { opacity: 1; transform: scale(1);}
 }
+
+#commit-mood {
+    z-index: 10;
+    position: absolute;
+    border-radius: 10px;
+    background-color: rgb(90, 243, 90);
+    width: 5vh;
+    border-color: black;
+    border-width: 1px 1px 1px 1px;
+    border-style: solid;
+    height: 5vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    img {
+        height: 70%;
+        width: 70%;
+    }
+    left: 1vh;
+    top: 1vh;
+}
+#commit-mood:hover {
+    cursor:pointer;
+}
+@keyframes shake {
+    0% { transform: rotate(0deg); }
+    15% { transform: rotate(-10deg); }
+    30% { transform: rotate(10deg); }
+    45% { transform: rotate(-10deg); }
+    60% { transform: rotate(10deg); }
+    75% { transform: rotate(-10deg); }
+    100% { transform: rotate(0deg); }
+}
+
+#commit-mood.shake {
+    animation: shake 0.5s;
+}
+#commit-mood:hover {
+    cursor: pointer;
+    animation: shake 0.5s;
+}
+
+#commit-mood-modal-overlay {
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0,0,0,0.3);
+    backdrop-filter: blur(6px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+#commit-mood-modal-window {
+    background: rgba(255,255,255,0.85);
+    border-radius: 18px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+    padding: 2rem 2.5rem;
+    min-width: 300px;
+    max-width: 40vw;
+    text-align: center;
+    animation: fadeIn 0.3s;
+
+    h2 {
+        background-color: none;
+        margin-bottom: 10px;
+    }
+}
+
+#commit-mood-modal-close {
+    margin-top: 1.5rem;
+    padding: 0.5rem 1.5rem;
+    border: none;
+    border-radius: 8px;
+    background: #0077ff;
+    color: #fff;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.2s;
+}
