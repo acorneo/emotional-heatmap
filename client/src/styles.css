@@ -1,0 +1,65 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    
+    font-family: "Roboto Slab", serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+}
+.map-wrapper {
+    background-color: rgb(212, 238, 255);
+}
+#world-map {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+}
+#modal-overlay {
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0,0,0,0.3);
+    backdrop-filter: blur(6px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+#modal-window {
+    background: rgba(255,255,255,0.85);
+    border-radius: 18px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+    padding: 2rem 2.5rem;
+    min-width: 300px;
+    max-width: 40vw;
+    text-align: center;
+    animation: fadeIn 0.3s;
+
+    h2 {
+        background-color: none;
+        margin-bottom: 10px;
+    }
+}
+#modal-close {
+    margin-top: 1.5rem;
+    padding: 0.5rem 1.5rem;
+    border: none;
+    border-radius: 8px;
+    background: #0077ff;
+    color: #fff;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+#modal-close:hover {
+    background: #005fcc;
+}
+.hidden {
+    display: none;
+}
+@keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.95);}
+    to { opacity: 1; transform: scale(1);}
+}
