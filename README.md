@@ -1,5 +1,5 @@
 # emotional-heatmap
-Online map where people can post their current mood and see medium mood from other locations. 
+An online map where people can post their current mood and see the average mood from other locations.
 
 ### AI Usage
-This project was mostly created with human intelligence, but artificial one took part in: correcting enlish grammar in some texts, and took a little part in development of the client side, mostly used to help me with writing google requests for some things I have no clue about. (It was a requirement to specify if project was created with **any** help of the AI by HackClub, so it was morally right to add this section). Yeah and also it generates commit messages for me.
+This project was primarily created using human intelligence, but artificial intelligence contributed in a few areas: correcting English grammar in some texts and assisting with client-side development, mainly by helping me write Google queries for topics I was unfamiliar with. (HackClub required disclosure of any AI assistance, so it was only right to include this section.) Also, AI generates commit messages for me sometimes.
