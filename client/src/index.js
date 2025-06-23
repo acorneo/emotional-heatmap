@@ -53,8 +53,39 @@ if (getCookie("seen") === null) {
 
 
 document.getElementById('commit-mood-modal-close').addEventListener('click', function(e) {
-    document.getElementById('commit-mood-modal-wrapper').classList.add('hidden');
+    document.getElementById('commit-mood-modal-wrapper').classList.add('hidden'); // TODO: send request to backend
+    showLoadingModal();
 });
 document.getElementById('commit-mood').addEventListener('click', function(e) {
     document.getElementById('commit-mood-modal-wrapper').classList.remove('hidden');
 });
+
+document.addEventListener('DOMContentLoaded', () => {
+    const moodBtnsContainer = document.getElementById('mood-btns-cntnr');
+    if (moodBtnsContainer) {
+        const emojiButtons = moodBtnsContainer.querySelectorAll('img');
+        emojiButtons.forEach(button => {
+            button.addEventListener('click', (e) => {
+                emojiButtons.forEach(btn => btn.classList.remove('selected'));
+                e.target.classList.add('selected');
+            });
+        });
+    }
+});
+
+function showLoadingModal() {
+    document.getElementById('loading-modal-wrapper').classList.remove('hidden');
+}
+function hideLoadingModal() {
+    document.getElementById('loading-modal-wrapper').classList.add('hidden');
+}
+
+function showSuccessModal() {
+    document.getElementById('success-modal-wrapper').classList.remove('hidden');
+}
+function hideSuccessModal() {
+    document.getElementById('success-modal-wrapper').classList.add('hidden');
+}
+document.getElementById('success-modal-close').addEventListener('click', hideSuccessModal);
+
+showSuccessModal();

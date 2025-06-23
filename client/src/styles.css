@@ -17,6 +17,15 @@
     width: 100vw;
     height: 100vh;
 }
+
+.hidden {
+    display: none;
+}
+@keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.95);}
+    to { opacity: 1; transform: scale(1);}
+}
+
 #modal-overlay {
     position: fixed;
     top: 0; left: 0; right: 0; bottom: 0;
@@ -36,11 +45,10 @@
     max-width: 40vw;
     text-align: center;
     animation: fadeIn 0.3s;
-
-    h2 {
-        background-color: none;
-        margin-bottom: 10px;
-    }
+}
+#modal-window h2 {
+    background-color: none;
+    margin-bottom: 10px;
 }
 #modal-close {
     margin-top: 1.5rem;
@@ -56,13 +64,6 @@
 #modal-close:hover {
     background: #005fcc;
 }
-.hidden {
-    display: none;
-}
-@keyframes fadeIn {
-    from { opacity: 0; transform: scale(0.95);}
-    to { opacity: 1; transform: scale(1);}
-}
 
 #commit-mood {
     z-index: 10;
@@ -77,15 +78,15 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    img {
-        height: 70%;
-        width: 70%;
-    }
     left: 1vh;
     top: 1vh;
 }
+#commit-mood img {
+    height: 70%;
+    width: 70%;
+}
 #commit-mood:hover {
-    cursor:pointer;
+    cursor: pointer;
 }
 @keyframes shake {
     0% { transform: rotate(0deg); }
@@ -96,7 +97,6 @@
     75% { transform: rotate(-10deg); }
     100% { transform: rotate(0deg); }
 }
-
 #commit-mood.shake {
     animation: shake 0.5s;
 }
@@ -115,7 +115,6 @@
     justify-content: center;
     z-index: 1000;
 }
-
 #commit-mood-modal-window {
     background: rgba(255,255,255,0.85);
     border-radius: 18px;
@@ -125,13 +124,11 @@
     max-width: 40vw;
     text-align: center;
     animation: fadeIn 0.3s;
-
-    h2 {
-        background-color: none;
-        margin-bottom: 10px;
-    }
 }
-
+#commit-mood-modal-window h2 {
+    background-color: none;
+    margin-bottom: 10px;
+}
 #commit-mood-modal-close {
     margin-top: 1.5rem;
     padding: 0.5rem 1.5rem;
@@ -142,4 +139,108 @@
     font-size: 1rem;
     cursor: pointer;
     transition: background 0.2s;
+}
+#commit-mood-modal-close:hover {
+    background: #005fcc;
+}
+#mood-btns-cntnr {
+    margin-top: 15px;
+}
+#mood-btns-cntnr * {
+    padding: 5px;
+    display: inline-block;
+}
+#mood-btns-cntnr img {
+    margin-left: 5px;
+    margin-right: 5px;
+    display: inline-block;
+    width: 5vh;
+    height: 5vh;
+    transition: transform 0.2s ease;
+    cursor: pointer;
+}
+#mood-btns-cntnr img:hover {
+    transform: scale(1.2);
+}
+#mood-btns-cntnr img.selected {
+    border: 1px solid black;
+    border-radius: 5px;
+}
+
+#loading-modal-overlay {
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0,0,0,0.3);
+    backdrop-filter: blur(6px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+#loading-modal-window {
+    background: rgba(255,255,255,0.85);
+    border-radius: 18px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+    padding: 2rem 2.5rem;
+    min-width: 300px;
+    max-width: 40vw;
+    text-align: center;
+    animation: fadeIn 0.3s;
+}
+#loading-modal-window h2 {
+    background-color: none;
+    margin-bottom: 10px;
+}
+.loading-spinner {
+    width: 60px;
+    height: 60px;
+    margin: 20px auto;
+    border: 4px solid #f3f3f3;
+    border-top: 4px solid #0077ff;
+    border-radius: 50%;
+    animation: spin 1.5s linear infinite;
+}
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+#success-modal-overlay {
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0,0,0,0.3);
+    backdrop-filter: blur(6px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+#success-modal-window {
+    background: rgba(255,255,255,0.85);
+    border-radius: 18px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+    padding: 2rem 2.5rem;
+    min-width: 300px;
+    max-width: 40vw;
+    text-align: center;
+    animation: fadeIn 0.3s;
+}
+#success-modal-window h2 {
+    background-color: none;
+    margin-bottom: 10px;
+}
+
+#success-modal-close {
+    margin-top: 1.5rem;
+    padding: 0.5rem 1.5rem;
+    border: none;
+    border-radius: 8px;
+    background: #0077ff;
+    color: #fff;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+#success-modal-close:hover {
+    background: #005fcc;
 }

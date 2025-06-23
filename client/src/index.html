@@ -22,6 +22,23 @@
          <div id="commit-mood-modal-window">
             <h2>❓ Want to share something?</h2>
             <p><b>How do you feel?</b> Note that you cannot send mood more often than every 5 minutes.</p>
+            <div id="mood-btns-cntnr">
+               <div id="mood-terrible">
+                  <img src="../assets/terrible.svg" />
+               </div>
+               <div id="mood-bad">
+                  <img src="../assets/bad.svg" />
+               </div>
+               <div id="mood-whatever">
+                  <img src="../assets/whatever.svg" />
+               </div>
+               <div id="mood-fine">
+                  <img src="../assets/well.svg" />
+               </div>
+               <div id="mood-awesome">
+                  <img src="../assets/awesome.svg" />
+               </div>
+            </div>
             <button id="commit-mood-modal-close">Submit!</button>
          </div>
       </div>
@@ -29,6 +46,26 @@
 
    <div id="commit-mood">
       <img src="../assets/sunglasses.png">
+   </div>
+
+   <div id="loading-modal-wrapper" class="hidden">
+      <div id="loading-modal-overlay">
+         <div id="loading-modal-window">
+               <h2>Loading</h2>
+               <div class="loading-spinner"></div>
+               <p>Please wait while we process your submission...</p>
+         </div>
+      </div>
+   </div>
+
+   <div id="success-modal-wrapper" class="hidden">
+      <div id="success-modal-overlay">
+         <div id="success-modal-window">
+            <h2>✅ Success!</h2>
+            <p>Thanks for taking part in this. Too see updated page you can either refresh it or wait for a minute after the last server update. Next mood update from your IP-address can be sent in 5 minutes.</p>
+            <button id="success-modal-close">Close</button>
+         </div>
+      </div>
    </div>
 
     <!--THIS SUCKS-->
